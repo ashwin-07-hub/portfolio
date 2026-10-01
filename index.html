@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashwin R - Portfolio & Resume</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-4xl mx-auto space-y-8">
+        
+        <!-- HEADER / PROFILE SECTION -->
+        <header class="bg-slate-800/80 backdrop-blur border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-xl flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6">
+            <div class="text-center sm:text-left space-y-2">
+                <span class="px-3 py-1 text-xs font-semibold tracking-wider text-indigo-400 bg-indigo-950/80 border border-indigo-800/50 rounded-full inline-block">
+                    2nd Year Student
+                </span>
+                <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Ashwin R</h1>
+                <p class="text-lg font-medium text-slate-400">Frontend Developer & UI/UX Designer</p>
+                <div class="pt-2 flex flex-wrap gap-4 justify-center sm:justify-start text-sm text-slate-300">
+                    <a href="mailto:ashwin.r@example.com" class="flex items-center gap-2 hover:text-indigo-400 transition-colors">
+                        <i class="fa-solid fa-envelope text-indigo-400"></i> ashwin.r@example.com
+                    </a>
+                    <a href="#" class="flex items-center gap-2 hover:text-indigo-400 transition-colors">
+                        <i class="fa-solid fa-location-dot text-indigo-400"></i> India
+                    </a>
+                </div>
+            </div>
+
+            <!-- ACTION / SOCIAL LINKS -->
+            <div class="flex sm:flex-col gap-3">
+                <a href="#" class="flex items-center justify-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm rounded-lg transition shadow-md hover:shadow-indigo-500/25">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="#" class="flex items-center justify-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white font-medium text-sm rounded-lg transition border border-slate-600">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+            </div>
+        </header>
+
+        <!-- ABOUT SECTION -->
+        <section class="bg-slate-800/50 border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-md">
+            <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                <i class="fa-solid fa-user-astronaut text-indigo-400"></i> About Me
+            </h2>
+            <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                Enthusiastic and detail-oriented 2nd-year undergraduate student with a passion for building clean, user-friendly digital interfaces. Skilled in <strong class="text-indigo-300">Frontend Development</strong>, <strong class="text-indigo-300">UI/UX Design</strong>, alongside core analytical and technical skills in <strong class="text-indigo-300">Python</strong> and <strong class="text-indigo-300">SQL</strong>. Eager to create impactful web applications and solve complex problems.
+            </p>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section class="bg-slate-800/50 border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-md">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-code text-indigo-400"></i> Technical Skills
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Skill 1 -->
+                <div class="bg-slate-900/60 border border-slate-700/60 rounded-xl p-4 flex flex-col items-start gap-2">
+                    <div class="p-2 bg-orange-500/10 text-orange-400 rounded-lg">
+                        <i class="fa-brands fa-html5 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-white">Frontend Dev</h3>
+                    <p class="text-xs text-slate-400">HTML5, CSS3, JavaScript, Responsive Design</p>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="bg-slate-900/60 border border-slate-700/60 rounded-xl p-4 flex flex-col items-start gap-2">
+                    <div class="p-2 bg-pink-500/10 text-pink-400 rounded-lg">
+                        <i class="fa-solid fa-pen-nib text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-white">UI/UX Design</h3>
+                    <p class="text-xs text-slate-400">Figma, Wireframing, Prototyping, User Experience</p>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="bg-slate-900/60 border border-slate-700/60 rounded-xl p-4 flex flex-col items-start gap-2">
+                    <div class="p-2 bg-blue-500/10 text-blue-400 rounded-lg">
+                        <i class="fa-brands fa-python text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-white">Python</h3>
+                    <p class="text-xs text-slate-400">Data Logic, Scripting, Problem Solving</p>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="bg-slate-900/60 border border-slate-700/60 rounded-xl p-4 flex flex-col items-start gap-2">
+                    <div class="p-2 bg-emerald-500/10 text-emerald-400 rounded-lg">
+                        <i class="fa-solid fa-database text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-white">SQL</h3>
+                    <p class="text-xs text-slate-400">Database Management, Queries, Relations</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TWO COLUMN LAYOUT (EDUCATION & EXPERIENCE) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- EDUCATION -->
+            <section class="bg-slate-800/50 border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-md">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-graduation-cap text-indigo-400"></i> Education
+                </h2>
+                <div class="border-l-2 border-indigo-500/40 pl-4 space-y-2">
+                    <span class="text-xs text-indigo-400 font-semibold uppercase tracking-wider">2023 – Present</span>
+                    <h3 class="text-base font-semibold text-white">Bachelor's Degree in Technology / CS</h3>
+                    <p class="text-sm text-slate-400">Your University Name</p>
+                    <p class="text-xs text-indigo-300 font-medium pt-1">Status: Currently in 2nd Year</p>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section class="bg-slate-800/50 border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-md">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-laptop-code text-indigo-400"></i> Featured Work
+                </h2>
+                <div class="space-y-4">
+                    <div class="bg-slate-900/40 p-3 rounded-lg border border-slate-700/40">
+                        <h3 class="text-sm font-semibold text-white">Personal Portfolio Website</h3>
+                        <p class="text-xs text-slate-400 mt-1">Designed UI/UX prototypes and developed using HTML, CSS, and modern responsive layouts.</p>
+                    </div>
+                    <div class="bg-slate-900/40 p-3 rounded-lg border border-slate-700/40">
+                        <h3 class="text-sm font-semibold text-white">Python & SQL Application</h3>
+                        <p class="text-xs text-slate-400 mt-1">Built a backend management project integrating SQL database queries with Python logic.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="text-center text-xs text-slate-500 pt-4">
+            <p>© 2026 Ashwin R. Built with HTML & Tailwind CSS.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

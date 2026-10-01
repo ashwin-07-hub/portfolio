@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashwin R - Portfolio & Resume</title>
+    <!-- FontAwesome Icons for UI elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           CUSTOM CSS STYLESHEET
+           ========================================================================== */
+
+        :root {
+            /* Color Palette */
+            --bg-main: #0f172a;          /* Slate 900 */
+            --card-bg: rgba(30, 41, 59, 0.7); /* Slate 800 with transparency */
+            --card-border: #334155;      /* Slate 700 */
+            --card-inner: #0f172a;       /* Dark contrast inside cards */
+            --text-primary: #f8fafc;     /* Slate 50 */
+            --text-secondary: #94a3b8;   /* Slate 400 */
+            --accent-primary: #6366f1;   /* Indigo 500 */
+            --accent-hover: #4f46e5;     /* Indigo 600 */
+            --accent-glow: rgba(99, 102, 241, 0.25);
+            --accent-light: #c7d2fe;     /* Indigo 200 */
+            
+            /* Skill Badges Accents */
+            --skill-html: #f97316;
+            --skill-uiux: #ec4899;
+            --skill-python: #3b82f6;
+            --skill-sql: #10b981;
+
+            /* Visual Effects */
+            --radius-lg: 1rem;
+            --radius-md: 0.75rem;
+            --radius-sm: 0.5rem;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2.5rem 1rem;
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Component: Cards & Sections */
+        .card {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        /* Header / Profile Card */
+        .header-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .header-card {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                text-align: left;
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.85rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--accent-light);
+            background-color: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 9999px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.025em;
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .contact-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            justify-content: center;
+        }
+
+        @media (min-width: 640px) {
+            .contact-list {
+                justify-content: flex-start;
+            }
+        }
+
+        .contact-item {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .contact-item i {
+            color: var(--accent-primary);
+        }
+
+        .contact-item:hover {
+            color: var(--accent-light);
+        }
+
+        /* Buttons & Actions */
+        .actions {
+            display: flex;
+            gap: 0.75rem;
+            width: 100%;
+        }
+
+        @media (min-width: 640px) {
+            .actions {
+                flex-direction: column;
+                width: auto;
+            }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid transparent;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-primary);
+            color: #ffffff;
+            box-shadow: 0 4px 14px var(--accent-glow);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: rgba(51, 65, 85, 0.6);
+            color: var(--text-primary);
+            border-color: var(--card-border);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(51, 65, 85, 0.9);
+            border-color: var(--text-secondary);
+            transform: translateY(-1px);
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+        }
+
+        .section-title i {
+            color: var(--accent-primary);
+        }
+
+        /* Section Text */
+        .about-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        @media (min-width: 500px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .skills-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .skill-card {
+            background-color: var(--card-inner);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .icon-box {
+            padding: 0.625rem;
+            border-radius: var(--radius-sm);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-html { background-color: rgba(249, 115, 22, 0.15); color: var(--skill-html); }
+        .icon-uiux { background-color: rgba(236, 72, 153, 0.15); color: var(--skill-uiux); }
+        .icon-python { background-color: rgba(59, 130, 246, 0.15); color: var(--skill-python); }
+        .icon-sql { background-color: rgba(16, 185, 129, 0.15); color: var(--skill-sql); }
+
+        .skill-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .skill-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Layout Grid */
+        .two-column-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .two-column-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Timeline & Projects */
+        .timeline-item {
+            border-left: 2px solid rgba(99, 102, 241, 0.4);
+            padding-left: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .timeline-date {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .timeline-sub {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .project-item {
+            background-color: var(--card-inner);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .project-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            padding-top: 1rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HEADER / PROFILE SECTION -->
+        <header class="card header-card">
+            <div>
+                <span class="badge">2nd Year Student</span>
+                <h1 class="title">Ashwin R</h1>
+                <p class="subtitle">Frontend Developer & UI/UX Designer</p>
+                
+                <div class="contact-list">
+                    <a href="mailto:ashwin.r@example.com" class="contact-item">
+                        <i class="fa-solid fa-envelope"></i> ashwin.r@example.com
+                    </a>
+                    <span class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i> India
+                    </span>
+                </div>
+            </div>
+
+            <div class="actions">
+                <a href="#" class="btn btn-primary">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+            </div>
+        </header>
+
+        <!-- ABOUT SECTION -->
+        <section class="card">
+            <h2 class="section-title">
+                <i class="fa-solid fa-user-astronaut"></i> About Me
+            </h2>
+            <p class="about-text">
+                Enthusiastic and detail-oriented 2nd-year undergraduate student with a passion for building clean, user-friendly digital interfaces. Skilled in <span class="highlight">Frontend Development</span>, <span class="highlight">UI/UX Design</span>, alongside core analytical and technical skills in <span class="highlight">Python</span> and <span class="highlight">SQL</span>. Eager to create impactful web applications and solve complex problems.
+            </p>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section class="card">
+            <h2 class="section-title">
+                <i class="fa-solid fa-code"></i> Technical Skills
+            </h2>
+            
+            <div class="skills-grid">
+                <!-- Skill 1 -->
+                <div class="skill-card">
+                    <div class="icon-box icon-html">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+                    <h3 class="skill-name">Frontend Dev</h3>
+                    <p class="skill-desc">HTML5, CSS3, JavaScript, Responsive Layouts</p>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="skill-card">
+                    <div class="icon-box icon-uiux">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <h3 class="skill-name">UI/UX Design</h3>
+                    <p class="skill-desc">Figma, Wireframing, Prototyping, Usability</p>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="skill-card">
+                    <div class="icon-box icon-python">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <h3 class="skill-name">Python</h3>
+                    <p class="skill-desc">Data Logic, Scripting, Problem Solving</p>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="skill-card">
+                    <div class="icon-box icon-sql">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 class="skill-name">SQL</h3>
+                    <p class="skill-desc">Database Management, Queries, Relations</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TWO COLUMN LAYOUT (EDUCATION & EXPERIENCE) -->
+        <div class="two-column-grid">
+            
+            <!-- EDUCATION -->
+            <section class="card">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-graduation-cap"></i> Education
+                </h2>
+                <div class="timeline-item">
+                    <span class="timeline-date">2023 – Present</span>
+                    <h3 class="timeline-title">Bachelor's Degree in Technology / CS</h3>
+                    <p class="timeline-sub">Your University Name</p>
+                    <p class="timeline-sub" style="color: var(--accent-light); margin-top: 0.25rem; font-weight: 500;">Status: Currently in 2nd Year</p>
+                </div>
+            </section>
+
+            <!-- FEATURED WORK -->
+            <section class="card">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-laptop-code"></i> Featured Work
+                </h2>
+                <div class="project-item">
+                    <h3 class="project-title">Personal Portfolio Web Page</h3>
+                    <p class="project-desc">Designed UI/UX prototypes and developed using semantic HTML & custom CSS styling.</p>
+                </div>
+                <div class="project-item">
+                    <h3 class="project-title">Python & SQL Application</h3>
+                    <p class="project-desc">Built a database-driven application integrating SQL query operations with Python scripting.</p>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>© 2026 Ashwin R. Built with HTML & Custom CSS.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
